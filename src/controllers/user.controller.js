@@ -1,8 +1,18 @@
-const soma = (req, res) => {
-  const soma = 100 + 1;
+const create = (req, res) => {
+  const { name, idade, cidade } = req.body;
 
-  res.send({ soma: soma });
+  if (!name || !idade || !cidade) {
+    res.status(400).send({ message: "submit all fields for registration" });
+  }
+
+  res.status(201).send({
+    message: "User created successfully",
+    user: {
+      name,
+      idade,
+      cidade,
+    },
+  });
 };
 
-
-module.exports = { soma, sub}
+module.exports = { create };
