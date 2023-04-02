@@ -1,8 +1,9 @@
 const express = require("express");
+const userRouter = require("./src/routes/user.route");
+
 const app = express();
 
-app.get("/", (req, res) => {
-  res.json({ ok: true });
-});
+app.use("/soma", userRouter);
+
 
 app.listen(3000);
