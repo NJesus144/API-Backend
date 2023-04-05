@@ -17,3 +17,15 @@ const connectDatabase = () => {
 };
 
 module.exports = connectDatabase;
+
+
+
+// try {
+//   if (!global.mongoose) {
+//     global.mongoose = await mongoose.connect(MONGODB_URI);
+//   }
+// } catch (err) {
+//   console.log(err);
+//   res.status(500).send("database error");
+// }
+// console.log('Successfully!')
