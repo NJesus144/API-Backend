@@ -1,12 +1,13 @@
-require("dotenv").config();
-const mongoose = require("mongoose");
+import dotenv from 'dotenv';
+dotenv.config();
+import mongoose from "mongoose";
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
 const connectDatabase = () => {
   console.log("Wait connecting to the database");
 
-  mongoose.set('strictQuery', false)
+  mongoose.set("strictQuery", false);
   mongoose
     .connect(MONGODB_URI, {
       useNewUrlParser: true,
@@ -16,9 +17,7 @@ const connectDatabase = () => {
     .catch((error) => console.log(error));
 };
 
-module.exports = connectDatabase;
-
-
+export default connectDatabase;
 
 // try {
 //   if (!global.mongoose) {
