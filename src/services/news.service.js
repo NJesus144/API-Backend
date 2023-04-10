@@ -18,6 +18,9 @@ const serachByTitleService = (title) =>
     .sort({ _id: -1 })
     .populate("user");
 
+const byUserService = (id) =>
+  News.find({ user: id }).sort({ _id: -1 }).populate("user");
+
 export {
   createService,
   findAllService,
@@ -25,4 +28,5 @@ export {
   topNewsService,
   findByIdService,
   serachByTitleService,
+  byUserService,
 };
